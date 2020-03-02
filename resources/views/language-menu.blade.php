@@ -1,11 +1,12 @@
-<li class="dropdown messages-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-language"></i>
-    </a>
-    <ul class="dropdown-menu">
-        <li>
-            <!-- inner menu: contains the actual data -->
-            <ul class="menu">
+<!-- Notifications: style can be found in dropdown.less -->
+<li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
 
                 @foreach($languages as $key => $language)
                     <li><!-- start message -->
@@ -17,6 +18,7 @@
                         </a>
                     </li>
                 @endforeach
+
             </ul>
         </li>
     </ul>
