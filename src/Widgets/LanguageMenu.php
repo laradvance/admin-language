@@ -1,8 +1,6 @@
 <?php
 
-
 namespace KevinSoft\MultiLanguage\Widgets;
-
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\Cookie;
@@ -11,7 +9,6 @@ use KevinSoft\MultiLanguage\MultiLanguage;
 
 class LanguageMenu implements Renderable
 {
-
     /**
      * Get the evaluated contents of the object.
      *
@@ -20,10 +17,11 @@ class LanguageMenu implements Renderable
     public function render()
     {
         $current = MultiLanguage::config('default');
-        if(Cookie::has('locale')) {
+        if (Cookie::has('locale')) {
             $current = Cookie::get('locale');
         }
-        $languages = MultiLanguage::config("languages");
-        return view("multi-language::language-menu", compact('languages', 'current'))->render();
+        $languages = MultiLanguage::config('languages');
+
+        return view('multi-language::language-menu', compact('languages', 'current'))->render();
     }
 }

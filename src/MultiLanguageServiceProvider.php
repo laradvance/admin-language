@@ -14,7 +14,7 @@ class MultiLanguageServiceProvider extends ServiceProvider
     public function boot(MultiLanguage $extension)
     {
         if (! MultiLanguage::boot()) {
-            return ;
+            return;
         }
 
         if ($views = $extension->views()) {
@@ -32,9 +32,9 @@ class MultiLanguageServiceProvider extends ServiceProvider
             MultiLanguage::routes(__DIR__.'/../routes/web.php');
         });
 
-        # $this->app->make('Illuminate\Contracts\Http\Kernel')->prependMiddleware(Middlewares\MultiLanguageMiddleware::class);
+        // $this->app->make('Illuminate\Contracts\Http\Kernel')->prependMiddleware(Middlewares\MultiLanguageMiddleware::class);
         $this->app['router']->pushMiddlewareToGroup('web', Middlewares\MultiLanguageMiddleware::class);
-        if(MultiLanguage::config("show-navbar", true)) {
+        if (MultiLanguage::config('show-navbar', true)) {
             Admin::navbar()->add(new LanguageMenu());
         }
     }
