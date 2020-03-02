@@ -6,7 +6,7 @@
   <title>{{config('admin.title')}} | {{ trans('admin.login') }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
+
   @if(!is_null($favicon = Admin::favicon()))
   <link rel="shortcut icon" href="{{$favicon}}">
   @endif
@@ -31,13 +31,13 @@
 
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ admin_base_path('/') }}"><b>{{ trans(config('admin.name')) }}</b></a>
+    <a href="{{ admin_url('/') }}"><b>{{ trans(config('admin.name')) }}</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">{{ trans('admin.login') }}</p>
 
-    <form action="{{ admin_base_path('auth/login') }}" method="post">
+    <form action="{{ admin_url('auth/login') }}" method="post">
       <div class="form-group has-feedback {!! !$errors->has('username') ?: 'has-error' !!}">
 
         @if($errors->has('username'))
@@ -110,7 +110,7 @@
 
     $("#locale").change(function () {
       let locale = $('#locale option:selected').val();
-      $.post(`/admin/locale`,{locale: locale}, function () {
+      $.post("{{ admin_url('/locale') }}",{locale: locale}, function () {
         location.reload();
       })
     });
