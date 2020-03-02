@@ -1,6 +1,8 @@
 laravel-admin Multi Language
 ======
 
+[![StyleCI](https://github.styleci.io/repos/213194616/shield?branch=master)](https://github.styleci.io/repos/213194616)
+
 ## Install
 
 ```
