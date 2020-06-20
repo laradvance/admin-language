@@ -1,7 +1,7 @@
 <!-- Notifications: style can be found in dropdown.less -->
 <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag"></i>
+              <span class="lang-sm" lang="{{$current}}"></span>
             </a>
             <ul class="dropdown-menu">
               <li>
@@ -11,10 +11,7 @@
                 @foreach($languages as $key => $language)
                     <li><!-- start message -->
                         <a class="language" href="#" data-id="{{$key}}">
-                            {{$language}}
-                            @if($key == $current)
-                                <i class="fa fa-check pull-right"></i>
-                            @endif
+                            <span class="lang-sm lang-lbl" lang="{{$key}}"></span>
                         </a>
                     </li>
                 @endforeach
